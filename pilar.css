@@ -1253,3 +1253,33 @@ svg {
   .menu-toggle .bar::before { top: -6px; }
   .menu-toggle .bar::after { top: 6px; }
 }
+
+@media (max-width: 768px) {
+  .main-nav.open {
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute;
+    top: 66px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    padding: 1.25rem 1.5rem;
+    z-index: 9998;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .main-nav.open ul,
+  .main-nav.open .nav-links {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .main-nav.open a {
+    display: block !important;
+    color: #0f172a !important;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+  }
+}
