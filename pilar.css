@@ -1218,3 +1218,38 @@ svg {
     }
 }
 
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 9999;
+  }
+
+  .menu-toggle .bar,
+  .menu-toggle .bar::before,
+  .menu-toggle .bar::after {
+    display: block !important;
+    width: 22px;
+    height: 2px;
+    background-color: #0f172a !important;
+    position: relative;
+  }
+
+  .menu-toggle .bar::before,
+  .menu-toggle .bar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+
+  .menu-toggle .bar::before { top: -6px; }
+  .menu-toggle .bar::after { top: 6px; }
+}
