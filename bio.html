@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Znaidersnick · Estudiante de ASIR">
+    <meta name="generator" content="Desarrollado por Znaidersnick (ASIR)">
+    <title>Biografía · Pilar Daniel i Gubert</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pilar.css">
+</head>
+<body id="inicio">
+
+    <div class="progress-track" aria-hidden="true">
+        <div class="progress-bar" id="readingProgress"></div>
+    </div>
+
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-mark">
+                <span class="pulse-dot" aria-hidden="true"></span>
+                <span>Pilar Daniel i Gubert</span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="main-nav" id="navMenu">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="bio.html" class="activo">Biografía</a></li>
+                    <li><a href="libros.html">Obras</a></li>
+                    <li><a href="contacto.html" class="nav-cta">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container reveal">
+                <span class="section-tag">PERFIL Y TRAYECTORIA</span>
+                <h1>Biografía</h1>
+                <p>Escritora y traductora literaria vinculada a Barcelona.</p>
+            </div>
+        </section>
+
+        <section class="editorial-section">
+            <div class="container bio-layout">
+                <aside class="portrait-card reveal">
+                    <img src="pilar.jpeg" alt="Pilar Daniel i Gubert">
+                    <p class="portrait-caption">PILAR DANIEL I GUBERT · BARCELONA</p>
+                </aside>
+
+                <article class="bio-article reveal delay-1">
+                    <blockquote class="editorial-quote" style="margin-top:0; margin-bottom:2.25rem;">
+                        «Su vínculo con la lectura y la escritura comenzó de manera muy temprana, aprendiendo a leer y escribir con apenas cuatro años.»
+                    </blockquote>
+
+                    <div class="bio-block">
+                        <h2>Creación literaria y premios</h2>
+                        <p>
+                            Pilar Daniel i Gubert es una escritora y traductora vinculada a Barcelona. Desarrolla una activa faceta como autora de relatos cortos, microrrelatos, poesía (como haikus y greguerías) y textos de carácter autobiográfico. Participa habitualmente en plataformas como el Club de Escritura Fuentetaja, donde ha publicado casi una treintena de textos propios y obtenido el III Premio de Poesía in-VERSO por su poemario <em>Suite del río Bergantes</em>.
+                        </p>
+                    </div>
+
+                    <div class="bio-block">
+                        <h2>Estilo y temáticas</h2>
+                        <p>
+                            En sus textos suele explorar la memoria familiar, la infancia, los viajes y la reflexión cotidiana, cuidando la musicalidad de la prosa y la precisión de las imágenes literarias.
+                        </p>
+                    </div>
+
+                    <div class="bio-block">
+                        <h2>Labor como traductora</h2>
+                        <p>
+                            Ha trabajado en la traducción literaria del castellano al catalán de obras biográficas y de ficción. Entre ellas destacan sus traducciones de <em>Anna Maria Dalí i Salvador</em>, de la escritora Antonina Rodrigo (publicada por Editorial Base), y de <em>Els fills de l'atzar</em>, de Blanca Martínez Fernández (publicada por Pagès Editors).
+                        </p>
+                    </div>
+
+                    <a href="libros.html" class="btn-primary">Explorar sus obras y traducciones</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <p class="footer-title">Pilar Daniel i Gubert · Barcelona</p>
+                <p class="footer-sub">Archivo literario, obra breve y traducción editorial.</p>
+            </div>
+            <a href="#inicio" class="back-top">
+                <span>Volver arriba</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <line x1="12" y1="19" x2="12" y2="5"></line>
+                    <polyline points="5 12 12 5 19 12"></polyline>
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<script>
+        window.addEventListener('load', () => {
+            const heroTitle = document.querySelector('.hero-title');
+            const heroSubtitle = document.querySelector('.hero-subtitle');
+            const heroEyebrow = document.querySelector('.hero .eyebrow');
+            const heroLead = document.querySelector('.hero-lead');
+            const heroActions = document.querySelector('.hero-actions');
+            const heroVisual = document.querySelector('.hero-visual');
+            const folioItems = document.querySelectorAll('.folio-item');
+
+            if (!heroTitle) return;
+
+           
+            [heroEyebrow, heroLead, heroActions, heroVisual].forEach(el => {
+                if (el) {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(18px)';
+                    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                }
+            });
+
+            folioItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+
+            const linea1 = 'PILAR DANIEL';
+            const linea2 = 'I GUBERT';
+            const textoSubtitulo = 'Escritora y traductora literaria';
+
+            heroTitle.innerHTML = '<span id="typeLine1"></span><br><span class="italic-accent" id="typeLine2"></span><span id="typeCursor" style="font-weight:300; color:#1d63b8;">|</span>';
+            if (heroSubtitle) {
+                heroSubtitle.textContent = '';
+                heroSubtitle.style.minHeight = '1.4em';
+            }
+
+            const span1 = document.getElementById('typeLine1');
+            const span2 = document.getElementById('typeLine2');
+            const cursor = document.getElementById('typeCursor');
+
+            const parpadeo = setInterval(() => {
+                if (cursor) cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+            }, 400);
+
+            let i = 0, j = 0, k = 0;
+
+            const mostrar = (el) => {
+                if (el) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translate(0, 0)';
+                }
+            };
+
+            const escribirSubtitulo = () => {
+                if (heroSubtitle && k < textoSubtitulo.length) {
+                    heroSubtitle.textContent += textoSubtitulo.charAt(k++);
+                    setTimeout(escribirSubtitulo, 28);
+                } else {
+                    setTimeout(() => {
+                        clearInterval(parpadeo);
+                        if (cursor) cursor.style.display = 'none';
+                    }, 500);
+
+                    mostrar(heroLead);
+                    setTimeout(() => mostrar(heroActions), 180);
+                    setTimeout(() => {
+                        mostrar(heroVisual);
+                        folioItems.forEach((item, idx) => {
+                            setTimeout(() => mostrar(item), 160 * (idx + 1));
+                        });
+                    }, 320);
+                }
+            };
+
+            const escribirLinea2 = () => {
+                if (j < linea2.length) {
+                    span2.textContent += linea2.charAt(j++);
+                    setTimeout(escribirLinea2, 60);
+                } else {
+                    setTimeout(escribirSubtitulo, 150);
+                }
+            };
+
+            const escribirLinea1 = () => {
+                if (i < linea1.length) {
+                    span1.textContent += linea1.charAt(i++);
+                    setTimeout(escribirLinea1, 55);
+                } else {
+                    setTimeout(escribirLinea2, 120);
+                }
+            };
+
+            
+            setTimeout(() => {
+                mostrar(heroEyebrow);
+                setTimeout(escribirLinea1, 200);
+            }, 350);
+        });
+    </script>

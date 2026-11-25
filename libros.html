@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Znaidersnick · Estudiante de ASIR">
+    <meta name="generator" content="Desarrollado por Znaidersnick (ASIR)">
+    <title>Obras y Traducciones · Pilar Daniel i Gubert</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pilar.css">
+</head>
+<body id="inicio">
+
+    <div class="progress-track" aria-hidden="true">
+        <div class="progress-bar" id="readingProgress"></div>
+    </div>
+
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-mark">
+                <span class="pulse-dot" aria-hidden="true"></span>
+                <span>Pilar Daniel i Gubert</span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="main-nav" id="navMenu">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="bio.html">Biografía</a></li>
+                    <li><a href="libros.html" class="activo">Obras</a></li>
+                    <li><a href="contacto.html" class="nav-cta">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container reveal">
+                <span class="section-tag">CATÁLOGO LITERARIO</span>
+                <h1>Obras y Traducciones</h1>
+                <p>Selección de sus obras propias publicadas en el Club de Escritura Fuentetaja y sus traducciones al catalán.</p>
+            </div>
+        </section>
+
+        <section class="editorial-section">
+            <div class="container">
+                <h2 class="catalog-heading reveal" style="margin-top:0;">Obra propia · Club de Escritura Fuentetaja</h2>
+
+                <div class="works-list">
+                    <article class="work-card reveal">
+                        <div class="book-cover-art cover-olivo">
+                            <span class="cover-tag">PREMIO IN-VERSO</span>
+                            <h3>Suite del río Bergantes</h3>
+                            <span class="cover-author">Pilar Daniel i Gubert</span>
+                        </div>
+                        <div class="work-info">
+                            <span class="section-tag">POESÍA · III PREMIO IN-VERSO</span>
+                            <h2>Suite del río Bergantes</h2>
+                            <p>
+                                Poemario galardonado con el III Premio de Poesía in-VERSO en el Club de Escritura Fuentetaja, destacado por la musicalidad de sus versos, la coherencia de sus imágenes y su mirada poética sobre el paisaje y la memoria.
+                            </p>
+                            <a href="https://clubdeescritura.com" target="_blank" rel="noopener" class="btn-primary">Leer en Fuentetaja ↗</a>
+                        </div>
+                    </article>
+
+                    <article class="work-card reveal delay-1">
+                        <div class="book-cover-art cover-terracota">
+                            <span class="cover-tag">RELATO · MEMORIA</span>
+                            <h3>Ni verdad ni mentira</h3>
+                            <span class="cover-author">Pilar Daniel i Gubert</span>
+                        </div>
+                        <div class="work-info">
+                            <span class="section-tag">NARRATIVA BREVE · INFANCIA</span>
+                            <h2>Ni verdad ni mentira</h2>
+                            <p>
+                                Relato autobiográfico que entrelaza memoria familiar, infancia y tradición, reflejando su temprana vocación por la lectura y la escritura con un tono cercano y evocador.
+                            </p>
+                            <a href="https://clubdeescritura.com" target="_blank" rel="noopener" class="btn-primary">Leer relato completo ↗</a>
+                        </div>
+                    </article>
+
+                  
+                        <div class="book-cover-art cover-piedra">
+                            <span class="cover-tag">HISTORIAS DEL VIAJE</span>
+                            <h3>Viaje iniciático</h3>
+                            <span class="cover-author">Pilar Daniel i Gubert</span>
+                        </div>
+                        <div class="work-info">
+                            <span class="section-tag">NARRATIVA · CONCURSO DE VIAJES</span>
+                            <h2>Viaje iniciático</h2>
+                            <p>
+                                Relato presentado en el II Concurso Historias del Viaje del Club de Escritura Fuentetaja, construido a través de pequeñas imágenes poéticas y una prosa cuidada sobre el descubrimiento personal.
+                            </p>
+                            <a href="https://clubdeescritura.com" target="_blank" rel="noopener" class="btn-primary">Leer relato completo ↗</a>
+                        </div>
+                    </article>
+
+
+                    
+
+    <script>
+        window.addEventListener('load', () => {
+            const heroTitle = document.querySelector('.hero-title');
+            const heroSubtitle = document.querySelector('.hero-subtitle');
+            const heroEyebrow = document.querySelector('.hero .eyebrow');
+            const heroLead = document.querySelector('.hero-lead');
+            const heroActions = document.querySelector('.hero-actions');
+            const heroVisual = document.querySelector('.hero-visual');
+            const folioItems = document.querySelectorAll('.folio-item');
+
+            if (!heroTitle) return;
+
+           
+            [heroEyebrow, heroLead, heroActions, heroVisual].forEach(el => {
+                if (el) {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(18px)';
+                    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                }
+            });
+
+            folioItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+
+            const linea1 = 'PILAR DANIEL';
+            const linea2 = 'I GUBERT';
+            const textoSubtitulo = 'Escritora y traductora literaria';
+
+            heroTitle.innerHTML = '<span id="typeLine1"></span><br><span class="italic-accent" id="typeLine2"></span><span id="typeCursor" style="font-weight:300; color:#1d63b8;">|</span>';
+            if (heroSubtitle) {
+                heroSubtitle.textContent = '';
+                heroSubtitle.style.minHeight = '1.4em';
+            }
+
+            const span1 = document.getElementById('typeLine1');
+            const span2 = document.getElementById('typeLine2');
+            const cursor = document.getElementById('typeCursor');
+
+            const parpadeo = setInterval(() => {
+                if (cursor) cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+            }, 400);
+
+            let i = 0, j = 0, k = 0;
+
+            const mostrar = (el) => {
+                if (el) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translate(0, 0)';
+                }
+            };
+
+            const escribirSubtitulo = () => {
+                if (heroSubtitle && k < textoSubtitulo.length) {
+                    heroSubtitle.textContent += textoSubtitulo.charAt(k++);
+                    setTimeout(escribirSubtitulo, 28);
+                } else {
+                    setTimeout(() => {
+                        clearInterval(parpadeo);
+                        if (cursor) cursor.style.display = 'none';
+                    }, 500);
+
+                    mostrar(heroLead);
+                    setTimeout(() => mostrar(heroActions), 180);
+                    setTimeout(() => {
+                        mostrar(heroVisual);
+                        folioItems.forEach((item, idx) => {
+                            setTimeout(() => mostrar(item), 160 * (idx + 1));
+                        });
+                    }, 320);
+                }
+            };
+
+            const escribirLinea2 = () => {
+                if (j < linea2.length) {
+                    span2.textContent += linea2.charAt(j++);
+                    setTimeout(escribirLinea2, 60);
+                } else {
+                    setTimeout(escribirSubtitulo, 150);
+                }
+            };
+
+            const escribirLinea1 = () => {
+                if (i < linea1.length) {
+                    span1.textContent += linea1.charAt(i++);
+                    setTimeout(escribirLinea1, 55);
+                } else {
+                    setTimeout(escribirLinea2, 120);
+                }
+            };
+
+           
+            setTimeout(() => {
+                mostrar(heroEyebrow);
+                setTimeout(escribirLinea1, 200);
+            }, 350);
+        });
+    </script>
